@@ -25,27 +25,31 @@ class _MainBottomNavigationState extends State<MainBottomNavigation> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: items[_selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: itemClicked,
-        items: const <BottomNavigationBarItem> [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.maps_home_work_rounded),
-            label: 'início',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.rule_rounded),
-            label: 'IMC',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.local_hospital_rounded),
-            label: 'dados',
-          ),
-        ],
-        type: BottomNavigationBarType.fixed,
-        elevation: 0.0,
-        backgroundColor: const Color.fromRGBO(246, 250, 250, 0.96),
-      ),
+      bottomNavigationBar: SizedBox(
+        height: 100, 
+        child: BottomNavigationBar(
+          selectedItemColor: Colors.amber,
+          currentIndex: _selectedIndex,
+          onTap: itemClicked,
+          items: const <BottomNavigationBarItem> [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.maps_home_work_rounded),
+              label: 'início',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.rule_rounded),
+              label: 'IMC',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.local_hospital_rounded),
+              label: 'dados',
+            ),
+          ],
+          type: BottomNavigationBarType.fixed,
+          elevation: 0.0,
+          backgroundColor: const Color.fromRGBO(246, 250, 250, 0.96),
+        ),
+      )
     );
   }
 }

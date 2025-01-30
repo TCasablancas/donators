@@ -1,4 +1,4 @@
-import 'package:donators/components/main_button.dart';
+import 'package:donators/components/selectable_view_grid.dart';
 import 'package:donators/views/home/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -11,6 +11,12 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeView extends HomeController {
+
+  // Properties
+  final _mainColor = const Color.fromRGBO(237, 237, 237, 0.93);
+  final _mainMargin = const EdgeInsets.fromLTRB(20, 0, 20, 0);
+
+  // Widget
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -23,15 +29,16 @@ class _HomeView extends HomeController {
             ),
           centerTitle: true,
           systemOverlayStyle: const SystemUiOverlayStyle(
-            systemNavigationBarColor: Colors.blue, // Navigation bar
-            statusBarColor: Colors.pink, // Status bar
+            systemNavigationBarColor: Colors.blue,
+            statusBarColor: Colors.pink,
           ),
+          backgroundColor: _mainColor,
         ),
         body: Container(
-          margin: const EdgeInsets.fromLTRB(20, 0, 20, 20),
-          child: const MainButton(title: "clique aqui"),
+          margin: _mainMargin,
+          child: SelectableViewGrid()
         ),
-        backgroundColor: Color.fromRGBO(246, 250, 250, 0.96),
+        backgroundColor: _mainColor,
       )
     );
   }
