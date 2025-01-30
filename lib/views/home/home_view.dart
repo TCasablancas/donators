@@ -13,22 +13,26 @@ class HomeView extends StatefulWidget {
 class _HomeView extends HomeController {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Donators",
-          style: TextStyle(fontWeight: FontWeight.w900, color: Colors.grey),
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            "Donators",
+            style: TextStyle(fontWeight: FontWeight.w900, color: Colors.grey),
+            ),
+          centerTitle: true,
+          systemOverlayStyle: const SystemUiOverlayStyle(
+            systemNavigationBarColor: Colors.blue, // Navigation bar
+            statusBarColor: Colors.pink, // Status bar
           ),
-        centerTitle: true,
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          systemNavigationBarColor: Colors.blue, // Navigation bar
-          statusBarColor: Colors.pink, // Status bar
         ),
-      ),
-      body: Container(
-        margin: const EdgeInsets.fromLTRB(20, 0, 20, 20),
-        child: const MainButton(title: "clique aqui"),
-      ),
+        body: Container(
+          margin: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+          child: const MainButton(title: "clique aqui"),
+        ),
+        backgroundColor: Color.fromRGBO(246, 250, 250, 0.96),
+      )
     );
   }
 }

@@ -1,5 +1,5 @@
+import 'package:donators/components/bottom_navigation.dart';
 import 'package:flutter/material.dart';
-import 'package:donators/views/home/home_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,11 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Donators App',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.grey),
         fontFamily: 'Quicksand',
-        useMaterial3: true,
       ),
-      home: const HomeView(),
+      home: MainBottomNavigation(),
     );
   }
 }
